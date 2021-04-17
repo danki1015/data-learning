@@ -315,4 +315,4 @@
 ![Poster](README/Poster.png)
 
 Yuk belajar data science bersama DQLab dengan daftarkan diri kamu dengan signup di [dqlab.id](dqlab.id).  
-Dapatkan potongan 10% dengan menggunakan kode referral "ARIS1615" atau klik [tautan ini](https://dqlab.id/signup?referralCode=ARIS1615) !
+Dapatkan potongan 10% dengan menggunakan kode referral "RIZK6266" atau klik [tautan ini](https://dqlab.id/signup?referralCode=RIZK6266) !
