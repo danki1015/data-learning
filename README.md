@@ -1,2 +1,2 @@
 # dqlab-career-track
-Python script
+Learning data with DQLab
