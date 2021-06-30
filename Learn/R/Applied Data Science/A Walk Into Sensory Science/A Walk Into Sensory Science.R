@@ -1,4 +1,4 @@
-# [Mengenal Data - Part 1](https://academy.dqlab.id/main/livecode/281/513/2519)
+# [Mengenal Data - Part 1]
 
 
 library(readr)
@@ -17,7 +17,7 @@ chocolates <-
 chocolates
 
 
-# [Mengenal Data - Part 2: Eksplorasi Struktur Data](https://academy.dqlab.id/main/livecode/281/513/2520)
+# [Mengenal Data - Part 2: Eksplorasi Struktur Data]
 
 
 install.packages("skimr",repos = "http://cran.us.r-project.org")
@@ -26,7 +26,7 @@ library(skimr)
 skim(chocolates)
 
 
-# [Mengenal Data - Part 3](https://academy.dqlab.id/main/livecode/281/513/2521)
+# [Mengenal Data - Part 3]
 
 
 library(dplyr)
@@ -42,7 +42,7 @@ n_sample <- 6
 n_panelist <- 29
 
 
-# [Mengenal Data - Part 4](https://academy.dqlab.id/main/livecode/281/513/2522)
+# [Mengenal Data - Part 4]
 
 
 ncol(chocolates) - 4
@@ -50,7 +50,7 @@ atribut_sensoris <- colnames(chocolates[-c(1, 2, 3, 4)])
 atribut_sensoris
 
 
-# [Mengenal Data - Part 5](https://academy.dqlab.id/main/livecode/281/513/2523)
+# [Mengenal Data - Part 5]
 
 
 install.packages("skimr",repos = "http://cran.us.r-project.org")
@@ -65,8 +65,7 @@ batas_bawah <- 0
 batas_atas <- 10
 
 
-# [Dari Satu Sisi - Part 1](https://academy.dqlab.id/main/livecode/281/513/2525)
-
+# [Dari Satu Sisi - Part 1]
 
 model_bitterness <- aov(bitterness ~ product + panelist + 
                           session + panelist:product + panelist:session + 
@@ -75,20 +74,20 @@ model_bitterness <- aov(bitterness ~ product + panelist +
 model_bitterness
 
 
-# [Dari Satu Sisi - Part 2](https://academy.dqlab.id/main/livecode/281/513/2526)
+# [Dari Satu Sisi - Part 2]
 
 
 anova(model_bitterness)
 
 
-# [Dari Satu Sisi - Part 3](https://academy.dqlab.id/main/livecode/281/513/2527)
+# [Dari Satu Sisi - Part 3]
 
 
 summary.lm(model_bitterness)
 -1.74 # dua digit di belakang koma/titik
 
 
-# [Dari Satu Sisi - Part 6](https://academy.dqlab.id/main/livecode/281/513/2530)
+# [Dari Satu Sisi - Part 6]
 
 
 library(FactoMineR)
@@ -100,14 +99,14 @@ anova(model_bitterness)
 res_bitterness$Ftest
 
 
-# [Dari Satu sisi - Part 7](https://academy.dqlab.id/main/livecode/281/513/2531)
+# [Dari Satu sisi - Part 7]
 
 
 res_bitterness$Ttest[1:7, 1:2]
 c("choc1", "choc4", "choc2", "choc5", "choc6", "choc3")
 
 
-# [Dari Satu Sisi - Part 8](https://academy.dqlab.id/main/livecode/281/513/2532)
+# [Dari Satu Sisi - Part 8]
 
 
 install.packages('agricolae ', repos="http://cran.rstudio.com/")
@@ -117,7 +116,7 @@ posthoc_bitterness  <- HSD.test(model_bitterness, trt = "product")
 posthoc_bitterness$groups
 
 
-# [Dari Satu Sisi - Part 9](https://academy.dqlab.id/main/livecode/281/513/2533)
+# [Dari Satu Sisi - Part 9]
 
 
 install.packages('agricolae', repos="http://cran.rstudio.com/")
@@ -128,7 +127,7 @@ posthoc_bitterness$groups
 plot.group(posthoc_bitterness, variation = "SE")
 
 
-# [Tak Cukup Satu Sisi - Part 2](https://academy.dqlab.id/main/livecode/281/513/2536)
+# [Tak Cukup Satu Sisi - Part 2]
 
 
 library(dplyr)
@@ -149,7 +148,7 @@ chocolates2 <- chocolates %>%
 chocolates2
 
 
-# [Tak Cukup Satu Sisi - Part 4](https://academy.dqlab.id/main/livecode/281/513/2538)
+# [Tak Cukup Satu Sisi - Part 4]
 
 
 chocolates_adjmean <- readRDS("chocolates_adjmean.rds")
@@ -157,7 +156,7 @@ chocolates_adjmean
 dim(chocolates_adjmean)
 
 
-# [Tak Cukup Satu Sisi - Part 5](https://academy.dqlab.id/main/livecode/281/513/2539)
+# [Tak Cukup Satu Sisi - Part 5]
 
 
 library(FactoMineR)
@@ -167,7 +166,7 @@ names(chocolates_pca)
 chocolates_pca$eig
 
 
-# [Tak Cukup Satu Sisi - Part 6](https://academy.dqlab.id/main/livecode/281/513/2540)
+# [Tak Cukup Satu Sisi - Part 6]
 
 
 library(factoextra)
@@ -176,7 +175,7 @@ fviz_eig(chocolates_pca, choice = "eigenvalue", addlabels = TRUE)
 fviz_eig(chocolates_pca, choice = "variance", addlabels = TRUE)
 
 
-# [Tak Cukup Satu Sisi - Part 7](https://academy.dqlab.id/main/livecode/281/513/2541)
+# [Tak Cukup Satu Sisi - Part 7]
 
 
 library(factoextra)
@@ -184,7 +183,7 @@ library(factoextra)
 fviz_pca_ind(chocolates_pca, repel = TRUE)
 
 
-# [Tak Cukup Satu Sisi - Part 8](https://academy.dqlab.id/main/livecode/281/513/2542)
+# [Tak Cukup Satu Sisi - Part 8]
 
 
 library(factoextra)
@@ -198,7 +197,7 @@ choc5 <- FALSE
 choc6 <- TRUE
 
 
-# [Tak Cukup Satu Sisi - Part 9](https://academy.dqlab.id/main/livecode/281/513/2543)
+# [Tak Cukup Satu Sisi - Part 9]
 
 
 library(factoextra)
@@ -206,7 +205,7 @@ library(factoextra)
 fviz_pca_var(chocolates_pca, repel = TRUE)
 
 
-# [Tak Cukup Satu Sisi - Part 10](https://academy.dqlab.id/main/livecode/281/513/2544)
+# [Tak Cukup Satu Sisi - Part 10]
 
 
 library(factoextra)
@@ -216,7 +215,7 @@ fviz_pca_var(chocolates_pca, repel = TRUE)
 "crunchy"
 
 
-# [Tak Cukup Satu Sisi - Part 11](https://academy.dqlab.id/main/livecode/281/513/2545)
+# [Tak Cukup Satu Sisi - Part 11]
 
 
 library(factoextra)
@@ -224,19 +223,19 @@ library(factoextra)
 fviz_pca_biplot(chocolates_pca, repel = TRUE, title = "Peta Persepsi Produk Cokelat Komersial")
 
 
-# [Pembukaan - Part 1](https://academy.dqlab.id/main/livecode/281/514/2547)
+# [Pembukaan - Part 1]
 
 
 FALSE
 
 
-# [Pembukaan - Part 2](https://academy.dqlab.id/main/livecode/281/514/2560)
+# [Pembukaan - Part 2]
 
 
 TRUE
 
 
-# [Konsistensi](https://academy.dqlab.id/main/livecode/281/514/2548)
+# [Konsistensi]
 
 
 metode_riset <- TRUE
@@ -251,15 +250,14 @@ informasi_hedonik <- TRUE
 model_statistik <- FALSE
 
 
-# [Dari Satu Sisi: ala SenseHub - Part 1](https://academy.dqlab.id/main/livecode/281/514/2549)
-
+# [Dari Satu Sisi: ala SenseHub - Part 1]
 
 "Cochran's Q test" <- FALSE
 "Analysis of variance" <- TRUE
 "Chi-square test" <- FALSE
 
 
-# [Dari Satu Sisi: ala SenseHub - Part 2](https://academy.dqlab.id/main/livecode/281/514/2550)
+# [Dari Satu Sisi: ala SenseHub - Part 2]
 
 
 "Dotplot" <- FALSE
@@ -268,13 +266,13 @@ model_statistik <- FALSE
 "Spider Plot" <- TRUE
 
 
-# [Tak Cukup Satu Sisi: ala SenseHub - Part 1](https://academy.dqlab.id/main/livecode/281/514/2551)
+# [Tak Cukup Satu Sisi: ala SenseHub - Part 1]
 
 
 5
 
 
-# [Tak Cukup Satu Sisi: ala SenseHub - Part 2](https://academy.dqlab.id/main/livecode/281/514/2552)
+# [Tak Cukup Satu Sisi: ala SenseHub - Part 2]
 
 
 96.4 # tanpa penanda persen (%)
